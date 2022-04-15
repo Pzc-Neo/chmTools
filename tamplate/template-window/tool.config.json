@@ -1,0 +1,25 @@
+{
+    "id": "template-window",
+    "name": "模板-window",
+    "description": "工具模板",
+    "version": "1.0",
+    "author": "潘志城_Neo",
+    "logo": "logo.png",
+    "target": "default",
+    "type": "window",
+    "html": "./renderer/index.html",
+    "main": "./main/main.js",
+    "style": {
+        "auto_open": false
+    },
+    "window_option": {
+        "width": 450,
+        "height": 320,
+        "frame": true,
+        "transparent": false,
+        "webPreferences": {
+            "nodeIntegration": true,
+            "webviewTag": true
+        }
+    }
+}

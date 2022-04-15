@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城墨工具箱</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" id="app_theme" href="./css/themes/dark/index.css">
+</head>
+
+<body>
+    <div id="app" class="chmST_container_col chmST_main chmCL_main" onclick="ct.view.hide_sub_menu()">
+        <div id="tool_panel" class="chmST_tool_panel chmCL_tool_panel">
+        </div>
+        <!-- 顶栏-start -->
+        <div class="chmST_top_bar chmCL_top_bar">
+            <div class="left">
+                <div class="menu">
+                    <span class="chmST_menu_group chmCL_menu_group can_mark"
+                        onmouseover="ct.view.show_sub_menu(event,'file')"
+                        onclick="ct.view.toggle_sub_menu(event,'file')">文件</span>
+                    <span class="chmST_menu_group chmCL_menu_group can_mark"
+                        onmouseover="ct.view.show_sub_menu(event,'help')"
+                        onclick="ct.view.toggle_sub_menu(event,'help')">帮助</span>
+                    <!-- onmouseover="show_sub_menu(event,'help')">帮助</span> -->
+                    <!-- :class="{chmCL_current_menu_group:is_show_sub_menu && current_sub_menu=='file'}" -->
+                </div>
+
+                <div id="id_sub_menu" class="chmST_sub_menu chmCL_sub_menu">
+                    <!-- 菜单：文件 -->
+                    <div class="menu_list file">
+                        <div onclick="ct.view.app_command('app_close')" class="can_mark">
+                            <span class="content_left">退出</span>
+                            <!-- <span class="content_right">Ctrl+Shift+I</span> -->
+                        </div>
+                    </div>
+                    <div class="menu_list help">
+                        <div onclick="ct.debug.open_dev_tool()" class="can_mark">
+                            <span class="content_left">关于</span>
+                            <!-- <span class="content_right">Ctrl+Shift+I</span> -->
+                        </div>
+                        <div onclick="ct.view.app_command('open_dev_tools')" class="can_mark">
+                            <span class="content_left">打开开发人员工具</span>
+                            <span class="content_right">Ctrl+Shift+I</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center app_name">城墨工具箱</div>
+            <div class="right system_btn">
+                <!-- <div style="display: inline-block;">
+                    <div v-if="win_always_on_top" class="can_mark"
+                        onclick="app_command('window_always_on_top','[取消置顶] 窗口')">
+                        <img src="./image/other_icon/always_on_top_true.svg">
+                    </div>
+                    <div v-else="win_always_on_top" class="can_mark"
+                        onclick="app_command('window_always_on_top','[置顶] 窗口')">
+                        <img src="./image/other_icon/always_on_top_false.svg">
+                    </div>
+                </div> -->
+                <div class="can_mark">
+                    <img src="./image/other_icon/setting.svg">
+                </div>
+                <div class="can_mark" onclick="ct.view.app_command('window_minimize')">
+                    <img src="./image/other_icon/minimize.svg">
+                </div>
+                <div class="can_mark" onclick="ct.view.app_command('window_maximize')">
+                    <img src="./image/other_icon/maximize.svg">
+                </div>
+                <div class="can_mark" onclick="ct.view.app_command('app_close')">
+                    <img class="quick" src="./image/other_icon/quick.svg">
+                </div>
+            </div>
+        </div>
+        <!-- 顶栏-end -->
+
+        <!-- 中栏-start -->
+        <div class="chmST_middle_bar chmCL_middle_bar chmST_container_row">
+            <!-- 选项栏-start -->
+            <div class="chmST_option_bar chmCL_option_bar">
+                <div>
+                    <div class="option tool selected chmST_container_col can_mark"
+                        onclick="ct.view.switch_panel('tool')">
+                        <img class="icon " src="./css/themes/dark/icon/option_bar/tool.svg">
+                        <span>工具</span>
+                    </div>
+                    <div class="option thinking can_mark" onclick="ct.view.switch_panel('thinking')">
+                        <img class="icon " src="./css/themes/dark/icon/option_bar/thinking.svg">
+                        <span>思维</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 选项栏-end -->
+
+            <!-- 工具面板-start -->
+            <div class="chmST_container_row chmST_content chmCL_content tool selected">
+                <!-- 分组-start -->
+                <div class="chmST_container_col chmST_side_bar chmCL_side_bar">
+                    <div class="search">
+                        <input type="box" placeholder="搜索..">
+                        <button class="chmST_sibar_btn chmCL_sibar_btn can_mark" onclick="ct.group.new()">+</button>
+                    </div>
+                    <!--分组列表 -->
+                    <div class="item_list"></div>
+                </div>
+                <!-- 分组-end -->
+
+                <!-- 工具-start -->
+                <div class="chmST_container_col chmST_tool_bar chmCL_tool_bar">
+                    <div class="search">
+                        <input type="box" placeholder="搜索..">
+                        <button class="chmST_sibar_btn chmCL_sibar_btn can_mark" onclick="ct.tool.init()">刷新</button>
+                        <button class="chmST_sibar_btn chmCL_sibar_btn can_mark"
+                            onclick="ct.tool.close_all()">关闭所有</button>
+                        <button class="chmST_sibar_btn chmCL_sibar_btn can_mark"
+                            onclick="ct.util.open_folder('tools')">打开文件夹</button>
+                        <button class="chmST_sibar_btn chmCL_sibar_btn can_mark"
+                            onclick="ct.view.show_color_info()">颜色说明</button>
+                    </div>
+                    <!-- 工具列表 -->
+                    <div class="item_list">
+                    </div>
+                </div>
+                <!-- 工具-end -->
+            </div>
+            <!-- 工具面板-end -->
+
+            <!-- 面板-start -->
+            <div class="chmST_content chmCL_content thinking">thinking</div>
+            <!-- 思维面板-end -->
+        </div>
+        <!-- 中栏-end -->
+
+        <!-- 底栏-start -->
+        <div class="chmST_bottom_bar chmCL_bottom_bar">你所看到的惊艳，都曾被平庸历练。</div>
+        <!-- 底栏-end -->
+
+        <!-- 右键菜单-start -->
+        <div id="tool_contextmenu" class="chmST_contextmenu chmCL_contextmenu">
+            <div class="tool_group menu">
+                <div class="menu_item" onclick="ct.group.new()">新建</div>
+                <div class="menu_item" onclick="ct.group.delete()">删除</div>
+                <div class="menu_item" onclick="ct.group.rename()">重命名</div>
+            </div>
+            <div class="tool_item menu">
+                <div class="menu_item" onclick="ct.tool.menu_command.show_tool_info()">详细信息</div>
+                <div class="menu_item" onclick="ct.tool.menu_command.open_folder()">打开文件夹</div>
+            </div>
+        </div>
+        <!-- 右键菜单-end -->
+    </div>
+
+
+
+    <!-- 库/框架-start -->
+    <script src="./js/lib/vue/vue@2.6.12.js"></script>
+    <script src="./js/lib/winbox-master/dist/winbox.bundle.js"></script>
+    <!-- 库/框架-end -->
+
+    <script src="./js/global.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/debug.js"></script>
+    <script src="./js/element.js"></script>
+    <script src="./js/group.js"></script>
+    <script src="./js/tool.js"></script>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

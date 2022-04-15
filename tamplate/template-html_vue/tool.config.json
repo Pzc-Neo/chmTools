@@ -1,0 +1,28 @@
+{
+    "id": "tamplate-html_vue",
+    "name": "模板-html_vue",
+    "description": "工具模板",
+    "version": "1.0",
+    "author": "潘志城_Neo",
+    "logo": "logo.png",
+    "target": "default",
+    "type": "html",
+    "html": "index.html",
+    "js": "index.js",
+    "css": "index.css",
+    "style": {
+        "show_position": false,
+        "show_size": false,
+        "auto_open": false,
+        "x": 150,
+        "y": 337,
+        "width": 266,
+        "height": 116,
+        "background": "#3478c1",
+        "background_blur": "#3d4756",
+        "borderRadius": "5px",
+        "border": 3
+    },
+    "path": "F:\\neo_project\\城墨工具箱\\chmTools\\tools\\test_nightmare",
+    "folder_name": "test_nightmare"
+}

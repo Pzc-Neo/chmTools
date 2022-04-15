@@ -1,0 +1,215 @@
+:root {
+    --main_color: #a8b7c5;
+    --main_light_color: #5e6b82;
+    --main_bg_color: #282C34;
+    --main_bg_color_2: #2C323Ecc;
+    --main_bg_color_3: #21252dfa;
+    --main_bg_color_4: #252931;
+    --main_hover_bg_color: #333d4c;
+    --main_border_color: #25252b;
+    --main_light_border_color: #353948;
+    --main_panel_border_color: #394e65;
+
+    --main_btn_color: #9fcbe8;
+    --main_btn_bg_color: #1859A0;
+    --main_btn_border_color: #007accb5;
+    --main_btn_color_hover: #ced8ef;
+    --main_btn_bg_color_hover: #3068ad;
+}
+
+.chmCL_main {
+    color: var(--main_color);
+    background: var(--main_bg_color);
+    /* border: 1px solid var(--main_panel_border_color); */
+}
+
+/*滚动条的背景颜色*/
+::-webkit-scrollbar-thumb {
+    background: #44505fa8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main_btn_bg_color);
+}
+
+/* 元素获取焦点时，外框风格-start */
+textarea,
+input,
+button,
+select,
+canvas,
+.vis-network {
+    outline: none;
+}
+
+textarea:focus,
+input:focus,
+button:focus,
+select:focus,
+canvas:focus,
+.vis-network:focus {
+    /* outline: 1px solid #3068ad; */
+    outline: 1px solid var(--main_btn_bg_color_hover);
+}
+
+.chmCL_textarea {
+    color: var(--main_color);
+    background: var(--main_bg_color_4);
+    border: 1px solid var(--main_light_border_color);
+}
+
+.chmCL_top_bar {
+    border-bottom: 1px solid var(--main_border_color);
+}
+
+.chmCL_top_bar .right div:hover {
+    background: var(--main_hover_bg_color);
+}
+
+.sub_menu {
+    border: 1px solid #3d4e61;
+
+    background: var(--main_bg_color_4);
+}
+
+.chmCL_menu_group:hover {
+    background: var(--main_hover_bg_color);
+}
+
+.chmCL_sub_menu {
+    border: 1px solid var(--main_panel_border_color);
+}
+
+.chmCL_sub_menu .separate_line {
+    background: #3d4e61;
+}
+
+.chmCL_sub_menu .menu_list div {
+    background: var(--main_bg_color_4);
+}
+
+.chmCL_sub_menu .menu_list div:hover {
+    color: var(--main_btn_color);
+    background: var(--main_btn_bg_color);
+}
+
+
+.chmCL_option_bar .option.selected {
+    background: var(--main_hover_bg_color);
+}
+
+.chmCL_footer_bar {
+    background: var(--main_btn_bg_color);
+    /* background: #037CCD; */
+}
+
+.chmCL_side_bar {
+    background: var(--main_bg_color_2);
+}
+
+.chmCL_side_bar .search input {
+    color: var(--main_color);
+    background: var(--main_bg_color);
+    border: 1px solid var(--main_border_color);
+}
+
+.chmCL_side_bar .search input::placeholder {
+    color: var(--main_light_color);
+}
+
+.chmCL_tool_bar .search input {
+    color: var(--main_color);
+    background: var(--main_bg_color);
+    border: 1px solid var(--main_border_color);
+}
+
+.chmCL_tool_bar .search input::placeholder {
+    color: var(--main_light_color);
+}
+
+
+.chmCL_tool_bar .item_list .item .title {
+    color: #5290d2;
+}
+
+.chmCL_tool_bar .item_list .item:hover {
+    background: var(--main_bg_color_3);
+
+}
+
+.chmCL_tool_bar .item_list .item div {
+    color: var(--main_light_color);
+
+}
+
+.chmCL_tool_bar .item_list .item .icon .no_icon {
+    color: aliceblue;
+    background: #387cc5;
+}
+
+.chmCL_bottom_bar {
+    background: #1859a0;
+}
+
+.chmCL_list_item {
+    /* background: #2c323f; */
+    border-bottom: 1px solid var(--main_border_color);
+}
+
+.chmCL_list_item:hover {
+    background: var(--main_bg_color);
+    border-bottom: 1px solid var(--main_border_color);
+}
+
+.chmCL_list_item.selected {
+    background: var(--main_bg_color);
+}
+
+.chmCL_label_title {
+    color: #5093da;
+    background: #363f637d;
+    border: 1px solid #4a9df81f;
+}
+
+
+.chmCL_sibar_btn {
+    color: var(--main_btn_color);
+    background: var(--main_btn_bg_color);
+    border: 1px solid var(--main_btn_border_color);
+}
+
+.chmCL_sibar_btn:hover {
+    color: #ECF5FF;
+    background: var(--main_btn_border_color);
+}
+
+.chmCL_sibar_btn:active {
+    background: #0370b9;
+}
+
+.chmCL_contextmenu {
+    color: var(--main_color);
+    background: var(--main_bg_color_4);
+    border: 1px solid var(--main_panel_border_color);
+    user-select: none;
+}
+
+.chmCL_contextmenu .menu_item:hover {
+    background: var(--main_btn_bg_color);
+}
+
+.chmCL_tool_type.webview {
+    background: #6547ad;
+}
+
+.chmCL_tool_type.window {
+    background: #1c663d;
+}
+
+.chmCL_tool_type.url {
+    background: rgb(116, 98, 40);
+}
+
+.chmCL_tool_type.html {
+    background: #235696;
+}

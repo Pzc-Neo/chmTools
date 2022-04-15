@@ -1,0 +1,23 @@
+{
+  "name": "chm-tools",
+  "version": "1.0.0",
+  "description": "基础练习",
+  "main": "./main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"electron .",
+    "build": "electron-packager . --electron-version=11.2.1 --overwrite --icon=./view/favicon.ico"
+  },
+  "author": "潘志城_Neo",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.1"
+  },
+  "dependencies": {
+    "ip": "^1.1.5",
+    "js-md5": "^0.7.3",
+    "qrcode": "^1.5.0",
+    "screenshot-desktop": "^1.12.7",
+    "tui-time-picker": "^2.1.4"
+  }
+}
