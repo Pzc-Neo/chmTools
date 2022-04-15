@@ -1,0 +1,26 @@
+{
+    "id": "random_place_online",
+    "name": "生成地点(在线)",
+    "description": "小说侠地点生成器",
+    "version": "0.1.0",
+    "author": "潘志城_Neo",
+    "logo": "",
+    "target": "tool_group_id-1638370741000-X8sjNP",
+    "type": "url",
+    "url": "https://www.xsxia.com/tools/name/place",
+    "style": {
+        "show_position": false,
+        "show_size": false,
+        "auto_open": false,
+        "x": "0",
+        "y": "39",
+        "width": "430",
+        "height": "95%",
+        "background": "#3478c1",
+        "background_blur": "#3d4756",
+        "borderRadius": "5px",
+        "border": 3
+    },
+    "path": "F:\\neo_project\\城墨工具箱\\chmTools\\tools\\random_place_online",
+    "folder_name": "random_place_online"
+}

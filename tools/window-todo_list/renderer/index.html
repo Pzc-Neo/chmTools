@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>待办事项</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <div class="chmST_top_bar">
+      <div class="section left">{{app_name}}</div>
+      <div class="section right system_btn">
+        <div style="display: inline-block;">
+          <div v-if="win_always_on_top" class="btn can_mark" @click="app_command('win_always_on_top','[取消置顶] 窗口')">
+            <img src="./image/other_icon/always_on_top_true.svg">
+          </div>
+          <div v-else="win_always_on_top" class="btn can_mark" @click="app_command('win_always_on_top','[置顶] 窗口')">
+            <img src="./image/other_icon/always_on_top_false.svg">
+          </div>
+        </div>
+        <div style="display: inline-block;" class="btn can_mark" @click="app_command('win_minimize')">
+          <img src="./image/other_icon/minimize.svg">
+        </div>
+        <div style="display: inline-block;" class="btn can_mark win_close" @click="app_command('win_close')">
+          <img class="quick" src="./image/other_icon/quick.svg">
+        </div>
+      </div>
+    </div>
+    <div class="chmST_bottom_bar">
+      <div class="header">
+        <input type="text" v-model="content" placeholder="请输入待办事项..." @keyup.enter="addTodo">
+      </div>
+      <div class="todo_list">
+        <div v-for="(todo,index) in todos" :key="todo.id" class="todo_item" draggable="true"
+          @dragstart="handle_drap($event)" @drop="handle_drop(event)" @dragover="handle_drap_over($event)"
+          drap_type="todoItem" drop_type="todoItem" :index="index" :title="todo.content">
+          <input type="checkbox" v-model="todo.done" class="todo_done" drap_type="todoItem" drop_type="todoItem"
+            :index="index">
+          <span class="todo_content" @contextmenu="edit(todo,$event)" @click="todo.done=!todo.done" drap_type="todoItem"
+            drop_type="todoItem" :index="index">{{todo.content}}</span>
+          <button class="big_btn delete_btn" @click="removeTodo(todo)" drap_type="todoItem" drop_type="todoItem"
+            :index="index">删除</button>
+        </div>
+      </div>
+      <div class="footer">
+        <span class="left">
+          <span>{{finished}}</span>
+          <span>/</span>
+          <span>{{todos.length}}</span>
+        </span>
+        <button class="big_btn delete_btn" @click="removeFinished">移除已完成</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/lib/vue@2.6.12.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+    "id": "reminder",
+    "name": "定时提醒器",
+    "description": "定时提醒器。",
+    "version": "1.0",
+    "author": "潘志城_Neo",
+    "logo": "logo.svg",
+    "target": "default",
+    "type": "window",
+    "html": "./renderer/index.html",
+    "main": "./main/main.js",
+    "style": {
+        "auto_open": false
+    },
+    "window_option": {
+        "width": 345,
+        "height": 150,
+        "maximizable":false,
+        "frame": false,
+        "transparent": true,
+        "webPreferences": {
+            "nodeIntegration": true,
+            "webviewTag": true
+        }
+    }
+}

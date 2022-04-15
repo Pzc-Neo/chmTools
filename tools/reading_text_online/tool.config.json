@@ -1,0 +1,26 @@
+{
+    "id": "reading_text_online",
+    "name": "朗读文本",
+    "description": "朗读当前章节。",
+    "version": "0.1.0",
+    "author": "潘志城_Neo",
+    "logo": "logo.png",
+    "target": "tool_group_id-1638370741000-X8sjNP",
+    "type": "webview",
+    "src": "https://www.ffkuaidu.com/",
+    "preload": "preload.js",
+    "style": {
+        "show_position": true,
+        "show_size": true,
+        "auto_open": false,
+        "x": "0",
+        "y": "39",
+        "width": "430",
+        "height": "666",
+        "background": "#3478c1",
+        "background_blur": "#3d4756",
+        "borderRadius": "5px",
+        "border": 3
+    },
+    "folder_name": "reading_text_online"
+}

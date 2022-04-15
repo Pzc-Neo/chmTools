@@ -1,0 +1,67 @@
+ <style>
+     .chmTools_tool_container.chmCL_main {
+         width: 100%;
+         height: 100%;
+         font-size: 14px;
+         box-sizing: border-box;
+         padding: 10px;
+         letter-spacing: 2px;
+     }
+
+     .chmTools_tool_container.chmCL_main .left {
+         width: 50%;
+         height: 100%;
+         float: left;
+     }
+
+     .chmTools_tool_container.chmCL_main .show_result {
+         width: 50%;
+         height: 100%;
+         display: inline-block;
+         text-align: center;
+     }
+ </style>
+ <div class="chmTools_tool_container chmCL_main">
+     <span class="left">
+         <div class="one_row">
+             <span class="chmST_label_title chmCL_label_title">姓</span>
+             <div style="display: inline-block;">
+                 <div node_type="mark_node" style="position: absolute;" class="focus_next can_mark">
+                 </div>
+                 <input class="last_name chmST_float_panel_input_box chmCL_float_panel_input_box" style="width: 30px;">
+             </div>
+
+             <span class="chmST_label_title chmCL_label_title">数量</span>
+             <div style="display: inline-block;">
+                 <div node_type="mark_node" style="position: absolute;" class="focus_next can_mark">
+                 </div>
+                 <input class="quantity chmST_float_panel_input_box chmCL_float_panel_input_box" style="width: 27px;"
+                     value="6">
+             </div>
+         </div>
+         <div class="one_row">
+             <span>
+                 <span class="chmST_label_title chmCL_label_title">女</span>
+                 <label class="switch can_mark">
+                     <input type="checkbox" name="is_gril" class="is_gril">
+                     <div class="slider round"></div>
+                 </label>
+             </span>
+             <span>
+                 <span class="chmST_label_title chmCL_label_title" style="margin-left: 6px;">复姓</span>
+                 <label class="switch can_mark">
+                     <input type="checkbox" name="compound_surname" class="compound_surname">
+                     <div class="slider round"></div>
+                 </label>
+             </span>
+         </div>
+         <div class="one_row">
+             <button class="generate chmST_sibar_btn chmCL_sibar_btn can_mark">生成
+             </button>
+             <button class="insert chmST_sibar_btn chmCL_sibar_btn can_mark">生成1个并插入
+             </button>
+         </div>
+     </span>
+     <span class="show_result">
+     </span>
+ </div>

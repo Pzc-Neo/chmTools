@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "encoding": "^0.1.13",
+    "jschardet": "^3.0.0",
+    "nodejieba": "^2.5.2"
+  }
+}

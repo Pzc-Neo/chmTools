@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random_name</title>
+</head>
+
+<body>
+    <div id="random_name">
+        <div style="width:190px;padding:5px;letter-spacing: 2px;">
+            <div class="one_row">
+                姓：
+                <div style="display: inline-block;">
+                    <div node_type="mark_node" style="position: absolute;" class="can_mark" @click="focus_next($event)">
+                    </div>
+                    <input class="first_name" class="chmST_float_panel_input_box chmCL_float_panel_input_box"
+                        style="width: 50px;">
+                </div>
+                <input class="is_random" type="checkbox" checked>
+                随机
+            </div>
+            <div class="one_row">
+                <input type="radio" class="compound_surname" value="0" checked> 单姓
+                <input type="radio" class="compound_surname" value="1">
+                复姓
+            </div>
+            <div class="one_row">
+                <input type="radio" class="sex" value="0" checked> 男
+                <input type="radio" class="sex" value="1"> 女
+            </div>
+            <div class="one_row">
+                数量：<input class="quantity chmST_float_panel_input_box chmCL_float_panel_input_box"
+                    style="width: 40px;">
+                <div class="generate chmST_btn_1 chm_editor_top_panel_btn can_mark">生成
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

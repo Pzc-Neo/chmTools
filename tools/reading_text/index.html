@@ -1,0 +1,42 @@
+<div class="chmTools_tool_container chmCL_main">
+    <style>
+        .winbox .chmTools_tool_container.chmCL_main {
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+    </style>
+    <div class="voiceinator">
+        <div class="one_row">
+            <select name="voice" class="voices" style="width: 210px;">
+                <option value="">选择朗读者</option>
+            </select>
+        </div>
+        <div class="one_row">
+            <span class="chmST_label_title chmCL_label_title">音量</span>
+            <input class="volume" type="range" min="0" max="1" value="1" step="0.1">
+            <label class="show_volume_value">1.0</label>
+        </div>
+        <div class="one_row">
+            <span class="chmST_label_title chmCL_label_title">语速</span>
+            <input class="rate" name="rate" type="range" min="0" max="10" value="5" step="0.1">
+            <label class="show_rate_value">5.0</label>
+        </div>
+        <div class="one_row">
+            <span class="chmST_label_title chmCL_label_title">音高</span>
+            <input class="pitch" type="range" min="0" max="2" step="0.1" value="1">
+            <label class="show_pitch_value">1.0</label>
+        </div>
+        <div class="one_row">
+            <button class="stop chmST_sibar_btn chmCL_sibar_btn can_mark">停止</button>
+            <button class="pause chmST_sibar_btn chmCL_sibar_btn can_mark">暂停</button>
+            <button class="resume chmST_sibar_btn chmCL_sibar_btn can_mark">继续</button>
+            <button class="speak chmST_sibar_btn chmCL_sibar_btn can_mark">开始</button>
+            <button class="speak_editor_seleted chmST_sibar_btn chmCL_sibar_btn can_mark">朗读当前选择的内容</button>
+            <button class="speak_clipboard chmST_sibar_btn chmCL_sibar_btn can_mark">朗读剪切板内容</button>
+        </div>
+    </div>
+</div>

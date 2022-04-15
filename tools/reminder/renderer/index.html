@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时提醒器</title>
+    <link rel="stylesheet" href="./css/lib/normalize.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="app" class="chmST_container_col chmST_main chmCL_main" @keyup.enter="start()"
+        @keyup.esc="close_time_is_up_panel()">
+        <div class="chmST_top_bar">
+            <!-- <div class="section left"></div> -->
+            <div class="section left">{{app_name}}</div>
+            <div class="section right system_btn">
+                <div style="display: inline-block;">
+                    <div v-if="win_always_on_top" class="can_mark"
+                        @click="app_command('win_always_on_top','[取消置顶] 窗口')">
+                        <img src="./image/other_icon/always_on_top_true.svg">
+                    </div>
+                    <div v-else="win_always_on_top" class="can_mark"
+                        @click="app_command('win_always_on_top','[置顶] 窗口')">
+                        <img src="./image/other_icon/always_on_top_false.svg">
+                    </div>
+                </div>
+                <!-- <div style="display: inline-block;" class="can_mark">
+                        <img src="./image/other_icon/setting.svg">
+                    </div> -->
+                <div style="display: inline-block;" class="can_mark" @click="app_command('win_minimize')">
+                    <img src="./image/other_icon/minimize.svg">
+                </div>
+                <!-- <div style="display: inline-block;" class="can_mark" @click="app_command('win_maximize')">
+                    <img src="./image/other_icon/maximize.svg">
+                </div> -->
+                <div style="display: inline-block;" class="can_mark win_close" @click="app_command('win_close')">
+                    <img class="quick" src="./image/other_icon/quick.svg">
+                </div>
+            </div>
+        </div>
+        <div class="chmST_bottom_bar chmCL_bottom_bar">
+            <audio class="clock_sound" src="./music/sound_ease-in.mp3" loop="loop"></audio>
+            <div v-show="is_show_time_is_up" class="time_is_up chmCL_main">
+                <div style="margin-bottom: 9px;">你设定的时间到了！</div>
+                <div class="chmST_btn chmCL_btn start_btn" @click="close_time_is_up_panel()">
+                    关闭
+                </div>
+            </div>
+            <div class="chmST_container_row chmST_section chmCL_section">
+                <div class="area ">
+                    <span class="remaining_time" v-text="remaining_time"></span>
+                </div>
+                <div class="area">
+                    <input type="number" class="interval" v-model.number="minute" @keyup.enter="start()">
+                    <!-- <span class="chmST_btn chmCL_btn"
+                    style="display: inline-block; width: 37px; border-radius: 0px 6px 6px 0px; font-size: 36; border: 1px solid #3a5080;">分钟</span> -->
+                </div>
+            </div>
+            <div class="chmST_container_row chmST_section chmCL_section">
+                <div class="area">
+                    <span class="chmST_btn chmCL_btn" v-for="time in time_list" @click="start(time)">{{time}}</span>
+                </div>
+                <div class="area">
+                    <div v-if="!is_running" class="chmST_btn chmCL_btn start_btn" style="width: 100%;" @click="start()">
+                        开始
+                    </div>
+                    <div v-else class="chmST_btn chmCL_btn start_btn" @click="pause()">
+                        {{is_pause?'继续':'暂停'}}
+                    </div>
+
+                    <div class="chmST_btn chmCL_btn start_btn" style="width: 100%;" @click="stop()">
+                        停止
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/lib/vue@2.6.12.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

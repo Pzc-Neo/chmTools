@@ -1,0 +1,46 @@
+<!-- `chmTools_tool_container`会被自动替换成 tool.json里面的id -->
+<div class="chmTools_tool_container chmCL_main">
+    <style>
+        .chmTools_tool_container.chmCL_main {
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+
+        .chmTools_tool_container.chmCL_main .left {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        .chmTools_tool_container.chmCL_main .right {
+            width: 50%;
+            height: 100%;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+    <span class="left">
+        <div class="one_row">
+            <div style="display: inline-block;width: 100%;">
+                <div node_type="mark_node" style="position: absolute;" class="focus_next can_mark">
+                </div>
+                <textarea class="qrcode_text chmST_textarea chmCL_textarea"
+                    style="width: 100%;">https://www.npmjs.com/package/qrcode</textarea>
+            </div>
+            <div class="one_row">
+                <span class="chmST_label_title chmCL_label_title">二维码内容</span>
+                <button class="generate chmST_sibar_btn chmCL_sibar_btn can_mark">生成
+                </button>
+            </div>
+        </div>
+    </span>
+    <span class="right">
+        <div class="one_row">
+            <canvas class="canvas"></canvas>
+        </div>
+    </span>
+</div>
